@@ -28,6 +28,11 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+//List of network images
+List<String> images = [
+  "https://unsplash.com/photos/JO_S6ewBqAk",
+  "https://unsplash.com/photos/JO_S6ewBqAk"
+];
 //List of countries
 const countries = [
   "Afghanistan",
@@ -288,7 +293,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: buildListViewCustomExample(),
+      body: buildGridViewBuilderExample(),
     );
   }
 }
@@ -361,7 +366,7 @@ Widget buildListViewExample() {
   );
 }
 
-//build a widget method that return a listViewBuilder of country and indexes
+///ListView.builder build a widget method that return a listViewBuilder of country and indexes
 Widget buildListViewBuilderExample() {
   return ListView.builder(
     itemCount: countries.length,
@@ -373,7 +378,7 @@ Widget buildListViewBuilderExample() {
   );
 }
 
-//build a widget method that return a listView.Seperated with a divider as the seperator of country and indexes
+///ListView.sepereated build a widget method that return a listView.Seperated with a divider as the seperator of country and indexes
 Widget buildListViewSeparatedExample() {
   return ListView.separated(
     itemCount: countries.length,
@@ -388,7 +393,7 @@ Widget buildListViewSeparatedExample() {
   );
 }
 
-//build a widget that returns a listView.Custom of country and index
+//ListView.custom Example- build a widget that returns a listView.Custom of country and index
 Widget buildListViewCustomExample() {
   return ListView.custom(
     childrenDelegate: SliverChildBuilderDelegate(
@@ -399,5 +404,34 @@ Widget buildListViewCustomExample() {
       },
       childCount: countries.length,
     ),
+  );
+}
+
+//GridView Example
+Widget buildGridViewBuilderExample() {
+  return GridView.builder(
+    //scrollDirection: Axis.horizontal,
+    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      crossAxisCount: 4,
+      crossAxisSpacing: 30,
+      mainAxisSpacing: 30,
+    ),
+    itemCount: countries.length,
+    itemBuilder: (context, index) {
+      return Container(
+        //text of countries
+        color: Color.fromARGB(93, 132, 184, 227),
+        child: Center(
+          child: Text(
+            countries[index],
+            style: TextStyle(
+              fontSize: 20,
+           
+            ),
+            //Add decoration
+          ),
+        ),
+      );
+    },
   );
 }
