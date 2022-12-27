@@ -28,11 +28,6 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-//List of network images
-List<String> images = [
-  "https://unsplash.com/photos/JO_S6ewBqAk",
-  "https://unsplash.com/photos/JO_S6ewBqAk"
-];
 //List of countries
 const countries = [
   "Afghanistan",
@@ -292,8 +287,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        centerTitle: true,
       ),
-      body: buildGridViewBuilderExample(),
+      body: buildGridViewCountExample(),
     );
   }
 }
@@ -407,6 +403,95 @@ Widget buildListViewCustomExample() {
   );
 }
 
+Widget buildMultipleRowInsideColumn() {
+  return Column(
+    // mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Container(
+            color: Colors.red,
+            height: 100,
+            width: 100,
+          ),
+          Container(
+            color: Colors.green,
+            height: 100,
+            width: 100,
+          ),
+          Container(
+            color: Colors.blue,
+            height: 100,
+            width: 100,
+          ),
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Container(
+            color: Colors.yellow,
+            height: 100,
+            width: 100,
+          ),
+          Container(
+            color: Colors.orange,
+            height: 100,
+            width: 100,
+          ),
+          Container(
+            color: Colors.purple,
+            height: 100,
+            width: 100,
+          ),
+        ],
+      ),
+    ],
+  );
+}
+
+//GridView Count Example
+Widget buildGridViewCountExample() {
+  return GridView.count(
+    crossAxisSpacing: 30,
+    mainAxisSpacing: 30,
+    crossAxisCount: 3,
+    children: [
+      Container(
+        color: Colors.yellow,
+        height: 100,
+        width: 100,
+      ),
+      Container(
+        color: Colors.orange,
+        height: 100,
+        width: 100,
+      ),
+      Container(
+        color: Colors.purple,
+        height: 100,
+        width: 100,
+      ),
+      Container(
+        color: Colors.red,
+        height: 100,
+        width: 100,
+      ),
+      Container(
+        color: Colors.green,
+        height: 100,
+        width: 100,
+      ),
+      Container(
+        color: Colors.blue,
+        height: 100,
+        width: 100,
+      ),
+    ],
+  );
+}
+
 //GridView Example
 Widget buildGridViewBuilderExample() {
   return GridView.builder(
@@ -426,7 +511,6 @@ Widget buildGridViewBuilderExample() {
             countries[index],
             style: TextStyle(
               fontSize: 20,
-           
             ),
             //Add decoration
           ),
