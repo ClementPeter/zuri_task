@@ -18,7 +18,7 @@ class Contact {
       ContactModels('Friday', 'assets/images/contact_6.png', '09050020032'),
       ContactModels('Saturday', 'assets/images/contact_7.png', '09010020040'),
       ContactModels('Sunday', 'assets/images/contact_8.png', '070100520040'),
-      ContactModels('January', 'assets/images/contact_9.png', '08030020040'),
+      ContactModels('January', 'assets/images/contact_20.png', '08030020040'),
       ContactModels('February', 'assets/images/contact_10.png', '09030020040'),
       ContactModels('March', 'assets/images/contact_11.png', '07030020040'),
       ContactModels('April', 'assets/images/contact_12.png', '05030020040'),

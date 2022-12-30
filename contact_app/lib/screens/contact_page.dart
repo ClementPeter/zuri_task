@@ -21,17 +21,17 @@ class ContactPage extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
-            child: ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(20)),
-              child: ListTile(
-                onTap: () {},
-                tileColor: const Color(0xFFEEEEEE),
-                title: Text(contacts[index].name),
-                leading: CircleAvatar(
-                  backgroundColor: Colors.white,
-                  child: Image.asset(contacts[index].image),
-                ),
-                subtitle: Text(contacts[index].number),
+            child: ListTile(
+              onTap: () {},
+              tileColor: const Color(0xFFEEEEEE),
+              title: Text(contacts[index].name),
+              leading: CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Image.asset(contacts[index].image),
+              ),
+              subtitle: Text(contacts[index].number),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
               ),
             ),
           );
