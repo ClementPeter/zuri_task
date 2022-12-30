@@ -37,13 +37,13 @@ import 'package:zuri_news/utils/error.dart';
 class Api {
   Future<List<Article>?> getNews() async {
     try {
+      //Change the Date incase API refuse to bring results
       final response = await http.get(Uri.parse(
           "https://newsapi.org/v2/everything?q=tesla&from=2022-12-27&sortBy=publishedAt&apiKey=0b77311fbbdc4605a599dc487655f65c"));
       if (response.statusCode == 200) {
         final Iterable json = jsonDecode(response.body)["articles"];
         print('JSON :::::::::::::::::::::::::::$json');
         return json.map((article) => Article.fromJson(article)).toList();
-
       } else {
         print(response.body);
         print('Error:::::::::::::::::::::::::::${response.body}}');

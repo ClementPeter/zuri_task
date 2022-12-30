@@ -32,16 +32,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  //late Future<NewsArticle> news;
 
   Future<NewsArticle>? news;
 
-  // Future<NewsArticle> getNews() async {
-  //   news = (await Api().getNews()) as Future<NewsArticle>?;
-  //   print(news);
-  //   return Api().getNews();
-  //   // print(newsData);
-  // }
+
   //launch News Url
   Future<void> _launchNewsUrl(String newsUrl) async {
     var url = Uri.parse(newsUrl);
@@ -121,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
           if (!snapshot.hasData) {
             return Center(
                 child: CircularProgressIndicator(
-              color: Colors.blue,
+              color: Colors.grey,
             ));
           } else if (snapshot.hasError) {
             return Text(snapshot.data.toString());
@@ -129,6 +123,8 @@ class _MyHomePageState extends State<MyHomePage> {
           if (snapshot.hasData) {
             //  return Text("${snapshot.data.toString()}");
             return ListView.builder(
+              physics: const BouncingScrollPhysics(
+                  parent: AlwaysScrollableScrollPhysics()),
               itemCount: snapshot.data!.length,
               //itemCount: news.length,
               itemBuilder: (context, index) {
@@ -148,7 +144,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       : snapshot.data![index].author!),
                   trailing: IconButton(
                     icon: const Icon(Icons.launch),
-                    onPressed: (() {}),
+                    onPressed: (() async {
+                      final newsUrl = snapshot.data![index].url!;
+                      await _launchNewsUrl(newsUrl);
+                    }),
                   ),
                 );
               },
