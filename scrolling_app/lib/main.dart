@@ -289,7 +289,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         centerTitle: true,
       ),
-      body: buildGridViewCountExample(),
+      body: buildListViewCustomExample(),
     );
   }
 }
@@ -392,6 +392,7 @@ Widget buildListViewSeparatedExample() {
 //ListView.custom Example- build a widget that returns a listView.Custom of country and index
 Widget buildListViewCustomExample() {
   return ListView.custom(
+    physics: const BouncingScrollPhysics(),
     childrenDelegate: SliverChildBuilderDelegate(
       (context, index) {
         return ListTile(
@@ -496,7 +497,7 @@ Widget buildGridViewCountExample() {
 Widget buildGridViewBuilderExample() {
   return GridView.builder(
     //scrollDirection: Axis.horizontal,
-    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
       crossAxisCount: 4,
       crossAxisSpacing: 30,
       mainAxisSpacing: 30,
