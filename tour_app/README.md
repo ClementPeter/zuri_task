@@ -16,24 +16,13 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 
-
-
 ## 💻 Description
 
 - Tour App to demo fetching data with Models
 
 ## ✨ Screenshots
 
-![Screenshot_20221230-163625](https://user-images.githubusercontent.com/61213263/210087476-76fa9ec9-9a7e-4e8b-96f5-378cf5c11d48.jpg)
 ![Screenshot_20221230-120615](https://user-images.githubusercontent.com/61213263/210087479-6bb237a9-467d-4924-aea5-c27e3d7e9049.jpg)
+![Screenshot_20221230-163625](https://user-images.githubusercontent.com/61213263/210087476-76fa9ec9-9a7e-4e8b-96f5-378cf5c11d48.jpg)
 ![Screenshot_20221230-162924](https://user-images.githubusercontent.com/61213263/210087481-18c206a6-d498-4072-9e75-4c541136c0aa.jpg)
-![Screenshot_20221230-162929](https://user-images.githubusercontent.com/61213263/210087482-c83f0fbc-50c9-41d8-ae93-cb8cfd23a9ba.jpg)
-
-
-
-
-
-
-
-
-
+![Screenshot_20221230-162929](https://user-images.githubusercontent.com/61213263/210087998-b77c02d3-8991-4eaf-8bf7-575ee09f7fbe.jpg)
